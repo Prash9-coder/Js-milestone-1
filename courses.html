@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Your Course</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 15px 0;
+        }
+
+        h1 {
+            margin-top: 25px;
+        }
+
+        form {
+            max-width: 300px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        input[type="radio"] {
+            display: inline;
+            margin-right: 5px;
+        }
+
+        input[type="button"],
+        button[type="reset"] {
+            width: 45%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+            font-size: 18px;
+            cursor: pointer;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        input[type="button"]:hover,
+        button[type="reset"]:hover {
+            background-color: #0056b3;
+        }
+
+        a {
+            display: block;
+            text-decoration: none;
+            color: #007bff;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background-color: #007bff;
+            color: #fff;
+            padding: 15px 0;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Select Your Course</h1>
+        <a href="login.html" target="_blank">Back to login</a>
+    </header>
+
+    <form>
+        <label for="bca">
+            <input type="radio" id="bca" name="course" value="bca"> BCA
+        </label>
+        <label for="bba">
+            <input type="radio" id="bba" name="course" value="bba"> BBA
+        </label>
+        <label for="mba">
+            <input type="radio" id="mba" name="course" value="mba"> MBA
+        </label>
+        <input type="button" value="Go" onclick="navigate()">
+        <button type="reset">Reset</button>
+    </form>
+
+    <footer>
+        <p>&copy; This website All rights Reserved By Prashanth</p>
+    </footer>
+
+    <script>
+        function navigate() {
+            var course = document.getElementsByName('course');
+            var selectedCourse;
+            for (var i = 0; i < course.length; i++) {
+                if (course[i].checked) {
+                    selectedCourse = course[i].value + '.html';
+                    break;
+                }
+            }
+            if (selectedCourse) {
+                window.open(selectedCourse ,'_blank');
+                alert('Please select a course.');
+            }
+        }
+    </script>
+</body>
+
+</html>

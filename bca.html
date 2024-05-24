@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BCA Subjects</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            font-size: 20px;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #007bff;
+            color: #fff;
+            padding:0.5px 0;
+        }
+
+        h1 {
+            margin-top: 30px;
+        }
+
+        form {
+            max-width: 300px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 18px;
+            text-align: left;
+        }
+
+        input[type="button"],
+        button[type="reset"] {
+            padding: 10px 20px;
+            margin-top: 20px;
+            font-size: 18px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="button"]:hover,
+        button[type="reset"]:hover {
+            background-color: #0056b3;
+        }
+
+        a {
+            text-decoration: none;
+            color: #1d04fa; /* Default color */
+            padding: 5px 10px;
+            border-radius: 5px;
+            background-color: aquamarine;
+            margin-right: 10px;
+        }
+
+        a:hover {
+            background-color: #06a5f4; /* Change color on hover */
+            color: coral;
+        }
+
+        footer {
+            background-color: #007bff;
+            color: #fff;
+            padding: 2px 0;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Subjects In BCA</h1>
+    </header>
+    
+    <form>
+        <h1>Select Your Subject</h1>
+        <label for="c++">
+            <input type="radio" id="c++" name="subjects" value="c++"> C++
+        </label>
+        <label for="javascript">
+            <input type="radio" id="javascript" name="subjects" value="javascript"> Javascript
+        </label>
+        <label for="dbms">
+            <input type="radio" id="dbms" name="subjects" value="dbms"> DBMS
+        </label>
+        <label for="webdesign">
+            <input type="radio" id="webdesign" name="subjects" value="webdesign"> Web Design
+        </label>
+        <input type="button" value="Go" onclick="navigate()">
+        <button type="reset">Reset</button><br><br>
+        <a href="courses.html" target="_blank">Back To Courses</a>
+    </form>
+    
+    <footer>
+        <p>&copy; This website All rights Reserved By Prashanth</p>
+    </footer>
+
+    <script>
+        function navigate() {
+            var subjects = document.getElementsByName('subjects');
+            var selectedSubject;
+            for (var i = 0; i < subjects.length; i++) {
+                if (subjects[i].checked) {
+                    selectedSubject = subjects[i].value + '.html';
+                    break;
+                }
+            }
+            if (selectedSubject) {
+                window.open(selectedSubject, '_blank'); // Redirect to the selected page
+            } else {
+                alert('Please select a subject.');
+            }
+        }
+    </script>
+</body>
+</html>

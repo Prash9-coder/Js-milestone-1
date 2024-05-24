@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MBA Subjects</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #007bff;
+            color: #ffffff;
+            padding: 10px;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        h1 {
+            margin-top: 30px;
+        }
+
+        form {
+            background-color: #ffffff;
+            padding: 20px;
+            margin: 0 auto;
+            max-width: 300px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        input[type="radio"] {
+            margin-bottom: 10px;
+        }
+
+        input[type="button"], button[type="reset"] {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 3px;
+            margin: 0 5px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        input[type="button"] {
+            background-color: #007bff;
+            color: #ffffff;
+            transition: background-color 0.3s;
+        }
+
+        button[type="reset"] {
+            background-color: #dc3545;
+            color: #ffffff;
+            transition: background-color 0.3s;
+        }
+
+        input[type="button"]:hover {
+            background-color: #0056b3;
+        }
+
+        button[type="reset"]:hover {
+            background-color: #c82333;
+        }
+        a {
+            text-decoration: none;
+            color: #1d04fa; 
+            padding: 5px 10px;
+            border-radius: 5px;
+            background-color: aquamarine;
+            margin-right: 10px;
+        }
+
+        a:hover {
+            background-color: #06a5f4; 
+            color: coral;
+        }
+
+        footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #007bff;
+            color: #ffffff;
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Subjects In MBA</h1>
+    </header>
+    
+    <form>
+        <h1>Select Your Subject</h1>
+        <input type="radio" id="macroeconomics" name="subjects" value="macroeconomics">
+        <label for="macroeconomics">Macroeconomics</label><br>
+        <input type="radio" id="human resources" name="subjects" value="human resources">
+        <label for="human resources">Human Resources</label><br>
+        <input type="radio" id="business law" name="subjects" value="businesslaw">
+        <label for="businesslaw">Business Law</label><br><br>
+        <input type="button" value="Go" onclick="navigate()">
+        <button type="reset">Reset</button><br><br>
+        <a href="courses.html"  target="_blank">Back To Courses</a>
+    </form>
+    
+    <footer>
+        <p>&copy; This website All rights Reserved By Prashanth</p>
+    </footer>
+
+    <script>
+        function navigate() {
+            var subjects = document.getElementsByName('subjects');
+            var selectedSubject;
+            for (var i = 0; i < subjects.length; i++) {
+                if (subjects[i].checked) {
+                    selectedSubject = subjects[i].value + '.html';
+                    window.open(selectedSubject,'_blank');
+                    return;
+                }
+            }
+            alert('Please select a subject');
+        }
+    </script>
+</body>
+</html>

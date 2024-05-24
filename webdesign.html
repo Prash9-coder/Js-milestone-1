@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignments</title>
+    <link rel="icon" href="favicon.ico" type="pdf/x-icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f6f6f6;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background-color: #007bff;
+            color: #f6f6f6;
+            text-align: center;
+            padding: 10px 0;
+            width: 100%;
+        }
+
+        main {
+            padding-top: 90px; 
+            width: 100%;
+            text-align: center;
+        }
+
+        footer {
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: #1d04fa; 
+            padding: 5px 10px;
+            border-radius: 5px;
+            background-color: aquamarine;
+            margin-right: 10px;
+        }
+
+        a:hover {
+            background-color: #06a5f4;
+            color: coral;
+        }
+
+        .custom-upload-btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .custom-upload-btn:hover {
+            background-color: #45a049;
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>This is the Assignments Page</h1>
+    </header>
+    <main>
+        <div>
+            <p>Download your Assignment</p>
+            <a href="./Milestone 1 - Project [Web Design and Development].pdf" download>Download web design assignment PDF</a><br><br>
+            <p>Upload your solution</p>
+            <label for="fileInput" class="custom-upload-btn" onclick="uploadFile()">Upload</label>
+            <input type="file" id="fileInput" accept=".pdf, .ppt, .pptx, .doc, .docx">
+            <button id="reuploadBtn" class="custom-upload-btn" onclick="reuploadFile()">Re-upload</button><br>
+            <button id="submitBtn" onclick="submit()">Submit</button><br><br><br>
+            <a href="bcalessons.html">BCA Lessons</a>
+            <a href="bcaquizzes.html">BCA Quizzes</a><br><br>
+            <a href="bca.html" target="_blank">Back To Subjects</a>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; This website All rights Reserved By Prashanth</p>
+    </footer>
+
+    <script>
+        function uploadFile() {
+            document.getElementById('fileInput').click();
+        }
+        function submit() {
+            const file = document.getElementById('fileInput').files[0];
+            if (file) {
+                alert('File submitted');
+                console.log(file);
+                document.getElementById('reuploadBtn').style.display = 'inline';
+            } else {
+                alert('File should not be empty');
+            }
+        }
+        function reuploadFile() {
+            document.getElementById('fileInput').value = null;
+            document.getElementById('reuploadBtn').style.display = 'none';
+            alert('Please re-upload the file');
+        }
+        document.getElementById('fileInput').addEventListener('change', function() {
+            document.getElementById('reuploadBtn').style.display = 'none';
+        });
+    </script>
+</body>
+
+</html>
